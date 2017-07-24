@@ -1,0 +1,11 @@
+He went out of the room calling ``Ewing!'' and returned in a few minutes accompanied  by an 
+slightly worn young man, with shellrimmed glasses and scanty blonde hair. He was now decently 
+in a ``sport shirt'', open at the neck, sneakers, and duck trousers.
+ And, of course, a few words 
+the symbols like \$, \%, \[, \], \(, \).
+ А і ще варто зауважити, що принцип ставлення дужок мені 
+незрозумілий. Раз такі, інший - інші. Щоб ``зробити тут таку''  дужку потрібно натиснути Alt і 
+клавіатурі справа ``0171''. А для потрібен код ``0187''. Цікаво, а як це зробити на 
+коли циферок справа взагалі нема. В загальному треба вияснити то питання. 
+ Було лінь щось 
+тому: якщо слово в ``лапках'', то перетворити його. Ну і ``бла-бла-бла-бла'' замінити також. 
