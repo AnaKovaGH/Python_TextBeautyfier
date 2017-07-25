@@ -10,9 +10,10 @@ def create_transfers(input_string):
         if current_lenth + len(word) > given_lenth:
             result += "\n"
             current_lenth = 0
+            mas.insert(0,word)
         else:
             result += word + " "
-            current_lenth += len(word)
+            current_lenth += len(word) + 1
     return result
 
 
@@ -66,11 +67,19 @@ for line in input_file:
     for i in words:
         word = replace_brackets(i)
         ready_words.append(add_slash(word))
-#data = input_file.read().replace('\n',' ')
-#prom = create_transfers(data)
-prom = create_transfers(" ".join(ready_words))
-print(prom)
-output_file.write(prom)
+
+prom = " ".join(ready_words)
+string = ""
+size = 0
+for i in prom:
+    if i != "\n":
+        string = string + i
+        size = len(string)
+    else:
+        prom = prom[size+1:]
+        string += "\n\n\n"
+tmp = create_transfers(string)
+output_file.write(tmp)
 
 input_file.close()
 output_file.close()
