@@ -1,7 +1,7 @@
 import re
 
 
-#функція для корегування кількості символів в рядку
+# функція для корегування кількості символів в рядку
 def create_transfers(input_string):
     mas = input_string.split(" ")
     result = ""
@@ -9,20 +9,20 @@ def create_transfers(input_string):
     for word in mas:
         if current_lenth + len(word) > given_lenth:
             result += "\n"
-            current_lenth = 0
-            mas.insert(0,word)
+            result += word + " "
+            current_lenth = len(word)
         else:
             result += word + " "
             current_lenth += len(word) + 1
     return result
 
 
-#функція для заміни лапок
+# функція для заміни лапок
 def replace_brackets(word):
-    first_brac =  re.match('"', word)
+    first_brac = re.match('"', word)
     if first_brac != None:
         smb = first_brac.group()
-        word = word[:first_brac.start()+1].replace("\"","``") + word[first_brac.start()+1:]
+        word = word[:first_brac.start() + 1].replace("\"", "``") + word[first_brac.start() + 1:]
 
     tmp = word.rfind("\"")
     if tmp != -1:
@@ -30,7 +30,7 @@ def replace_brackets(word):
         if tmp_st[-1] == "\"":
             word = word[:tmp] + word[tmp:].replace("\"", "''")
         elif tmp_st[-1] == "." or tmp_st[-1] == ",":
-             word = word[:tmp] + word[tmp:tmp + 1].replace("\"", "''") + tmp_st[-1]
+            word = word[:tmp] + word[tmp:tmp + 1].replace("\"", "''") + tmp_st[-1]
 
     prom1 = word.find("«")
     if prom1 != -1:
@@ -41,28 +41,27 @@ def replace_brackets(word):
 
     return word
 
-#функція для додавання слешу
+
+# функція для додавання слешу
 def add_slash(word):
     smb = {"$", "%", "[", "]", "{", "}", "(", ")"}
     for i in smb:
         if word.find(i) != -1:
-          tmp =  word.find(i)
-          word = word[:tmp] + word[tmp:].replace(i, "\\"+ i)
+            tmp = word.find(i)
+            word = word[:tmp] + word[tmp:].replace(i, "\\" + i)
 
     return word
 
 
-
-
-
-
-print("Task 2\n")
 given_lenth = 80
 input_file = open("text_file_task2.txt", "r")
 output_file = open("new_file_task2.txt", "w")
+output_file.write("Task 2 \n\n")
 
 ready_words = []
 for line in input_file:
+    if line[-1] != "\n":
+        line += "\n"
     words = line.split(" ")
     for i in words:
         word = replace_brackets(i)
@@ -76,10 +75,10 @@ for i in prom:
         string = string + i
         size = len(string)
     else:
-        prom = prom[size+1:]
-        string += "\n\n\n"
-tmp = create_transfers(string)
-output_file.write(tmp)
+        tmp = create_transfers(string)
+        output_file.write(tmp)
+        prom = prom[size + 1:]
+        string = "\n\n\n"
 
 input_file.close()
 output_file.close()
