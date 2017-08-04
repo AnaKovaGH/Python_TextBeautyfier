@@ -5,17 +5,17 @@ GENERAL USAGE NOTES
 ----------------------------------------------------------------------
 Input:
 
--Text with unicode symbols which are not supported within LaTex.  
+- Text with unicode symbols which are not supported within LaTex.  
 
 Output:
 
--Text split in 80-char lines. 
+- Text split in 80-char lines. 
 
--Between paragraphs two empty lines. 
+- Between paragraphs two empty lines. 
 
--All quotes are replaced by a double apostrophe and double back normal. 
+- All quotes are replaced by a double apostrophe and double back normal. 
 
--Before the symbols "$", "%", "[]" "()" put a slash. 
+- Before the symbols "$", "%", "[]" "()" put a slash. 
 
 
 ======================================================================
