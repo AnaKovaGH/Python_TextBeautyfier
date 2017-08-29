@@ -5,7 +5,7 @@ GENERAL USAGE NOTES
 ----------------------------------------------------------------------
 Input:
 
-- Text with unicode symbols which are not supported within LaTex.  
+- Text with unicode symbols which are not supported within LaTeX.  
 
 Output:
 
@@ -17,9 +17,21 @@ Output:
 
 - Before the symbols "$", "%", "[]" "()" put a slash. 
 
+```bash
+usage: latex_beautify.py [-h] [-i INPUT] [-d DESTINATON]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -i INPUT, --input INPUT
+                        A file which to translate
+  -d DESTINATON, --destinaton DESTINATON
+                        Output file, where to write beautified text.If not
+                        specified, text is printed to STDOUT
+```
+
 
 ======================================================================
 
 Text editing program can be reached at:
 
-E-mail: anastasiyakovalyshyn@gmail.com
+Github: https://github.com/AnnieKey/LaTeX-text-beutifier
